@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <%= csrf_meta_tag %>
+    <%= render 'layouts/stylesheets' %>
+  </head>
+  <body>
+    <div class="container">
+      <%= render 'layouts/header' %>
+      <section class="round">
+         <% flash.each do |key, value| %>
+           <!-- <div class="flash <%= key %>"><%= value %></div> can be user in place below line. but complex as mix of HTML & ERb-->
+           <%= content_tag(:div, value, :class => "flash #{key}") %>
+        <% end %>
+         <%= yield %>
+      </section>
+      <%= render 'layouts/footer' %>
+      <%= debug(session[:staysignedin])  if Rails.env.development? %>
+      <%= debug(session[:user_id]) if Rails.env.development? %>
+      <%= debug(session) if Rails.env.development? %>
+      <%= debug(cookies) if Rails.env.development? %>
+      <%= debug(cookies[:remember_token]) if Rails.env.development? %>
+      <%= debug(current_user) if Rails.env.development? %>
+    </div>
+  </body>
+</html>
+

@@ -1,0 +1,9 @@
+<tr>
+  <td class="machine">
+    <span class="content"><%= machine.instance %></span>
+    <span class="content"><%= machine.tool_id %></span>
+    <span class="timestamp">
+      Posted <%= time_ago_in_words(machine.created_at) %> ago.
+    </span>
+  </td>
+</tr>

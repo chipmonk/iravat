@@ -1,0 +1,34 @@
+<<<<<<< HEAD
+<h1>Sign Up</h1>
+<%= form_for(:each) do |f| %>
+=======
+<h1>Sign up</h1>
+
+<%= form_for(@user) do |f| %>
+  <%= render 'shared/error_messages' %>
+>>>>>>> 8bb21482ceb84ddcd7c2531b04bd003dcc1c5f7f
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :password %><br />
+    <%= f.password_field :password %>
+  </div>
+  <div class="field">
+    <%= f.label :password_confirmation, "Confirmation" %><br />
+    <%= f.password_field :password_confirmation %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Sign up" %>
+  </div>
+<<<<<<< HEAD
+<%end%>
+=======
+<% end %>
+
+>>>>>>> 8bb21482ceb84ddcd7c2531b04bd003dcc1c5f7f

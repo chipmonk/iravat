@@ -1,0 +1,113 @@
+#!/home/alok/.rvm/rubies/ruby-1.9.2-p136/bin/ruby
+require 'spec_helper'
+
+describe PagesController do
+render_views
+  
+  before(:each) do
+    @base_title = 'Clipper'
+  end
+
+  render_view
+
+  before(:each) do
+    @base_title = 'Clipper App'
+  end
+
+  describe "GET 'home'" do
+    it "should be successful" do
+      get 'home'
+      response.should be_success
+    end
+<<<<<<< HEAD
+
+    it "should be successful in displaying title" do
+      get 'home'
+      response.should has_selector("title",:content => " #{@base_title} | Home " )
+    end
+
+=======
+    it 'should pass title test' do
+      get 'home'
+      response.should have_selector('title', :content => "#{@base_title} Home")
+    end
+>>>>>>> 5f0d5cf4f790d807ae8f868960c1d1bbb44e970e
+  end
+
+  describe "GET 'contact'" do
+    it "should be successful" do
+      get 'contact'
+      response.should be_success
+    end
+<<<<<<< HEAD
+
+    it "should be successful in displaying title" do
+      get 'contact'
+      response.should has_selector("title",:content => " #{@base_title} | Contact " )
+    end
+ 
+
+  end
+
+  describe "GET 'about'" do
+    it "should be successful" do
+      get 'about'
+      response.should be_success
+    end
+
+    it "should be successful in displaying title" do
+      get 'about'
+      response.should has_selector("title",:content => " #{@base_title} | About" )
+    end
+
+
+  end
+  describe "GET 'help'" do
+    it "should be successful" do
+      get 'help'
+      response.should be_success
+    end
+
+    it "should be successful in displaying title" do
+      get 'help'
+      response.should has_selector("title",:content => " #{@base_title} | Help" )
+    end
+
+
+  end
+
+=======
+    it 'should pass title test' do
+      get 'contact'
+      response.should have_selector('title', :content => "#{@base_title} Contact")
+    end
+
+  end
+  
+  describe "GET 'about'" do
+    it "should be successful" do
+      get 'about'
+      response.should be_success
+    end
+    it 'should pass title test' do
+      get 'about'
+      response.should have_selector('title', :content => "#{@base_title} About")
+    end
+
+  end
+
+  describe "GET 'help'" do
+    it "should be successful" do
+      get 'help'
+      response.should be_success
+    end
+    it 'should pass title test' do
+      get 'help'
+      response.should have_selector('title', :content => "#{@base_title} Help")
+    end
+
+  end
+
+>>>>>>> 5f0d5cf4f790d807ae8f868960c1d1bbb44e970e
+
+end

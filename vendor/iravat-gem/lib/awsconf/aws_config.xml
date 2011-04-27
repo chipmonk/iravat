@@ -1,0 +1,28 @@
+<ChipMonkAWSConfigs>
+
+    <AWSAccessKey>
+        <AWSAccessKey>AKIAI3PFX46PLS7Q2FSQ</AWSAccessKey>
+        <AWSAccessSecretKey>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</AWSAccessSecretKey>
+    </AWSAccessKey>
+
+    <S3>
+        <Server>s3.amazonaws.com</Server>
+        <Port>443</Port>
+        <Protocol>https</Protocol>
+        <MultiThread>false</MultiThread>
+        <NamePrefix>ChipMonk</NamePrefix>
+        <NameSuffix>S3</NameSuffix>
+	      <Delimeter>-</Delimeter>
+    </S3>
+
+    <EC2>
+        <NamePrefix>ChipMonk></NamePrefix>
+       <NameSuffix>S3</NameSuffix>        
+    </EC2>
+
+    <LogFile>
+	<FileName>log.txt</FileName>
+    </LogFile>
+
+
+</ChipMonkAWSConfigs>

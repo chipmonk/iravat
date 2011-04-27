@@ -1,0 +1,59 @@
+ 
+<log4r_config>
+ 
+  <pre_config>
+    <custom_levels>DEBUG, INFO, WARN, ERROR, FATAL</custom_levels>
+    <global level="ALL"/>
+  </pre_config>
+ 
+    <outputter name="console" type="StdoutOutputter" level="DEBUG" >
+        <formatter type="Log4r::PatternFormatter">
+            <pattern>=>[%5l %d] %C: %M [%t]</pattern>
+        </formatter>
+    </outputter>
+ 
+    <outputter name="file_outputter" type="FileOutputter">
+        <filename>/var/log/chipmonk/iravat/logs.txt</filename>
+        <formatter type="Log4r::PatternFormatter">
+            <pattern>=>[%5l %d] %C: %M [%t]</pattern>
+        </formatter>
+    </outputter>
+ 
+    <logger name="MasterLogger"
+                level="ALL" additive="false" trace="true">
+        <outputter>file_outputter</outputter>
+    </logger>
+ 
+   <logger name="S3Logger"
+                level="ALL" additive="false" trace="true">
+        <outputter>console</outputter>
+        <outputter>file_outputter</outputter>
+    </logger>
+
+    <logger name="Ec2Logger"
+                level="ALL" additive="false" trace="true">
+        <outputter>console</outputter>
+        <outputter>file_outputter</outputter>
+    </logger>
+    
+    <logger name="AWSConfig"
+                level="ALL" additive="false" trace="true">
+        <outputter>console</outputter>
+        <outputter>file_outputter</outputter>
+    </logger>
+
+    <logger name="RightScaleLogger"
+                level="ALL" additive="false" trace="true">
+        <outputter>console</outputter>
+        <outputter>file_outputter</outputter>
+    </logger>
+</log4r_config>
+W, [2011-04-20T15:23:41.665759 #9565]  WARN -- : Unable to initiate logging for module MasterLogger
+
+W, [2011-04-20T15:23:41.665927 #9565]  WARN -- : Unable to initiate logging for module MasterLogger
+
+W, [2011-04-20T15:23:41.666407 #9565]  WARN -- : Unable to initiate logging for module MasterLogger
+
+I, [2011-04-20T15:23:41.666576 #9565]  INFO -- : New RightAws::S3Interface using shared connections mode
+I, [2011-04-20T15:23:41.667076 #9565]  INFO -- : Opening new HTTPS connection to s3.amazonaws.com:443
+I, [2011-04-20T15:23:43.238456 #9565]  INFO -- : New RightAws::S3Interface using shared connections mode
